@@ -1,0 +1,5 @@
+.app-container {
+    background-color: var(--background-color);
+    height: 100vh;
+    padding: 0px 30px;
+}
