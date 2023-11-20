@@ -1,0 +1,18 @@
+.navList {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    gap: 15px;
+}
+
+
+.search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:12px;
+    flex-grow: 1;
+}
+

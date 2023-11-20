@@ -1,0 +1,29 @@
+table {
+    border-collapse: collapse;
+    border: 1px solid black;
+    text-align: center;
+    vertical-align: middle;
+    width: 75%;
+    margin: auto;
+    color: #FFFFFF;
+}
+
+caption {
+    font-weight: bold;
+    font-size: 24px;
+    text-align: left;
+    color: white;
+    margin-bottom: 16px;
+}
+
+thead {
+    background-color: #333;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    background-color: #333;
+}
