@@ -1,0 +1,14 @@
+.no-content-page-container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:29px;
+}
+
+.no-content-page-container p{
+    color: white;
+    font-size: 32px;
+    text-align: center;
+}
