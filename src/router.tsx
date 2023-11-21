@@ -1,11 +1,10 @@
 import {createBrowserRouter} from "react-router-dom";
-import App from "./App";
 import WelcomePage from "./ui/pages/welcome/WelcomePage";
 import LoginPage from "./ui/pages/login/LoginPage";
 import NoContentPage from "./ui/pages/noContent/noContent";
 import EditPage from "./ui/pages/edit/EditPage";
-import NavBar from "./ui/components/NavBar";
 import IndexPage from "./ui/pages/index/IndexPage";
+import ShowQR from "./ui/pages/showQR/ShowQR";
 
 const router = createBrowserRouter([
     {
@@ -26,12 +25,12 @@ const router = createBrowserRouter([
     },
     {
         path: '/edit',
-        element: <EditPage name={'malparido'}/>
+        element: <EditPage/>
     },
     {
-        path:'/navBar',
-        element: <NavBar></NavBar>
-    }
+        path: '/showQR',
+        element: <ShowQR/>
+    },
 
 ])
 

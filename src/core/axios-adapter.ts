@@ -1,4 +1,4 @@
-import axios, {AxiosDefaults, AxiosInstance, CreateAxiosDefaults} from "axios";
+import axios, {AxiosInstance, CreateAxiosDefaults} from "axios";
 
 export default class AxiosAdapter {
     public axios: AxiosInstance
@@ -14,7 +14,7 @@ export default class AxiosAdapter {
 
     getAxiosConfig = (domain: string | undefined): CreateAxiosDefaults => {
         return {
-            baseURL: domain || 'https://7d12-130-250-228-37.ngrok-free.app',
+            baseURL: domain || 'https://a0ca-130-250-228-37.ngrok-free.app',
             headers: {
                 'Content-Type': 'application/json'
             }
