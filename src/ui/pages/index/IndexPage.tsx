@@ -13,7 +13,7 @@ interface componentProps {
 
 const IndexPage: React.FC<componentProps> = () => {
 
-    const [data, setData] = useState([]);
+    const [codes, setCodes] = useState<Code[] | []>([]);
 
     useEffect(() => {
         getData()

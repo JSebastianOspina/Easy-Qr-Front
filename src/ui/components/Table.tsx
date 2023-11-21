@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import './table-styles.css';
 import {Code} from "../../core/models/Code";
 import Button from "./Button";
@@ -53,6 +53,9 @@ const Table: React.FC<componentProps> = ({initialCodes}) => {
 
     return (
         <div>
+            <div className='table-button-container'>
+                <Button text={'Crear nuevo QR'} redirectTo={'/edit'}></Button>
+            </div>
             <table>
                 <caption>Gestionar QR's creados por el usuario</caption>
                 <thead>
