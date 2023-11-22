@@ -2,8 +2,9 @@ import axios, {AxiosInstance} from "axios";
 import AxiosAdapter from "./axios-adapter";
 import {Code} from "./models/Code";
 import {user} from "./auth";
+import ICodesRepository from "./codes-repository.interface";
 
-export class CodesRepository {
+export default class HttpCodesRepository implements ICodesRepository {
     private httpAdapter: AxiosInstance;
     private readonly username: null | string;
 
@@ -13,7 +14,7 @@ export class CodesRepository {
     }
 
 
-    search = async (userParam: string): Promise<Code[] | []> => {
+    search = async (userParam: string): Promise<Code[]> => {
         const url = `/api/codes?filters[description][$containsi]=${userParam}`
         const {data: response} = await this.httpAdapter.get<any>(url)
         const codes = response.data as any[]
@@ -22,7 +23,7 @@ export class CodesRepository {
         })
     }
 
-    getAll = async (): Promise<Code[] | []> => {
+    getAll = async (): Promise<Code[]> => {
         const url = `/api/codes?filters[user][$eq]=${this.username}`
         const {data: response} = await this.httpAdapter.get<any>(url)
 
@@ -48,7 +49,7 @@ export class CodesRepository {
         }
     }
 
-    update = async (id:number, description: string, url: string): Promise<boolean> => {
+    update = async (id: number, description: string, url: string): Promise<boolean> => {
         const targetUrl = `/api/codes/${id}`
         try {
             await this.httpAdapter.put<any>(targetUrl, {
@@ -64,7 +65,7 @@ export class CodesRepository {
         }
     }
 
-     delete = async (id:number): Promise<boolean> => {
+    delete = async (id: number): Promise<boolean> => {
         const targetUrl = `/api/codes/${id}`
         try {
             await this.httpAdapter.delete<any>(targetUrl)
@@ -73,7 +74,6 @@ export class CodesRepository {
             return false
         }
     }
-
 
 
 }

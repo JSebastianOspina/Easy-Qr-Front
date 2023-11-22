@@ -3,7 +3,7 @@ import './table-styles.css';
 import {Code} from "../../core/models/Code";
 import Button from "./Button";
 import {useNavigate} from "react-router-dom";
-import {CodesRepository} from "../../core/codes-repository";
+import {codesRepositoryProvider} from "../../core/codes-repository-provider";
 
 interface componentProps {
     initialCodes: Code[] | [];
@@ -34,7 +34,7 @@ const Table: React.FC<componentProps> = ({initialCodes}) => {
         })
     }
     const deleteQr = async (codeId: number) => {
-        const codesRepository = new CodesRepository()
+        const codesRepository = codesRepositoryProvider()
         const wasDeleted = await codesRepository.delete(codeId)
         if (!wasDeleted) {
             alert('No se pudo borrar el QR')
@@ -68,7 +68,7 @@ const Table: React.FC<componentProps> = ({initialCodes}) => {
                 <tbody>
                 {codes.map((code) => {
                     return (
-                        <tr>
+                        <tr key={code.id}>
                             <td>{code.description}</td>
                             <td>{code.url}</td>
                             <td>

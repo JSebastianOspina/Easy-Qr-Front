@@ -3,9 +3,10 @@ import './styles.css';
 import Logo from "../../components/Logo";
 import FormQuestion from "../../components/FormQuestion";
 import Button from "../../components/Button";
-import {CodesRepository} from "../../../core/codes-repository";
 import {useLocation, useNavigate} from "react-router-dom";
 import {Code} from "../../../core/models/Code";
+import {codesRepositoryProvider} from "../../../core/codes-repository-provider";
+import ICodesRepository from "../../../core/codes-repository.interface";
 
 interface componentProps {
 }
@@ -22,14 +23,14 @@ const EditPage: React.FC<componentProps> = () => {
 
 
     const handleOnClick = () => {
-        const codeRepository = new CodesRepository()
+        const codeRepository = codesRepositoryProvider()
         if (code) {
             updateCode(codeRepository)
         } else {
             createCode(codeRepository)
         }
     }
-    const createCode = async (codeRepository: CodesRepository) => {
+    const createCode = async (codeRepository: ICodesRepository) => {
         const wasCreated = await codeRepository.create(formData.description, formData.url)
         if (!wasCreated) {
             alert('No se pudo crear el QR')
@@ -37,7 +38,7 @@ const EditPage: React.FC<componentProps> = () => {
         }
         navigate('/index')
     }
-    const updateCode = async (codeRepository: CodesRepository) => {
+    const updateCode = async (codeRepository: ICodesRepository) => {
         const wasUpdate = await codeRepository.update(code?.id as number, formData.description, formData.url)
         if (!wasUpdate) {
             alert('No se pudo editar el QR')

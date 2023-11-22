@@ -5,8 +5,8 @@ import {user} from "../../../core/auth";
 import NoContentPage from "../noContent/noContent";
 import Table from "../../components/Table";
 import NavBar from "../../components/NavBar";
-import {CodesRepository} from "../../../core/codes-repository";
 import {Code} from "../../../core/models/Code";
+import {codesRepositoryProvider} from "../../../core/codes-repository-provider";
 
 interface componentProps {
 }
@@ -20,8 +20,7 @@ const IndexPage: React.FC<componentProps> = () => {
     }, [])
 
     const getData = async () => {
-        console.log('getData executed')
-        const codesRepository = new CodesRepository()
+        const codesRepository = codesRepositoryProvider()
         const userCodes = await codesRepository.getAll()
         setCodes(userCodes)
     }
