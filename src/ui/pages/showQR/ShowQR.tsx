@@ -14,7 +14,7 @@ const ShowQR: React.FC = () => {
             <div>
             <QRCode
                 size={256}
-                style={{ height: "500px", maxWidth: "100%", width: "500px", background: 'white'}}
+                style={{ height: "500px", maxWidth: "100%", width: "500px"}}
                 value={url}
                 viewBox={`0 0 256 256`}
             />
