@@ -7,7 +7,6 @@ import {useLocation} from "react-router-dom";
 const ShowQR: React.FC = () => {
 
     const {state} = useLocation()
-    const [url, setUrl] = React.useState<string>(state.codeUrl)
 
     return (
         <div className='QR-container'>
@@ -15,7 +14,7 @@ const ShowQR: React.FC = () => {
             <QRCode
                 size={256}
                 style={{ height: "500px", maxWidth: "100%", width: "500px"}}
-                value={url}
+                value={state.codeUrl}
                 viewBox={`0 0 256 256`}
             />
             </div>
