@@ -33,6 +33,7 @@ th, td {
     display: flex;
     justify-content: end; /* center horizontally */
     align-items: center; /* center vertically */
+    margin-bottom: 15px;
 }
 
 .table-button-container .button-component{
