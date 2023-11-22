@@ -14,7 +14,7 @@ export class DexieCodesDatabase extends Dexie {
     constructor() {
         super('myDatabase');
         this.version(1).stores({
-            codes: '++id' // Primary key and indexed props
+            codes: '++id,description' // Primary key and indexed props
         });
     }
 }
