@@ -28,7 +28,7 @@ const router = createBrowserRouter([
         element: <EditPage/>
     },
     {
-        path: '/showQR',
+        path: '/show-qr',
         element: <ShowQR/>
     },
 

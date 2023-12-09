@@ -24,10 +24,9 @@ const LoginPage:React.FC<componentProps> = (props: componentProps) => {
 
     return (
         <div className='login-page-container'>
-            <Logo/>
+            <Logo />
             <FormQuestion label={'¿Cuál es tu nombre?'} placeholder={'Mr John Doe'} onChange={onInputChange}/>
             <Button text={'Iniciar sesión'} onClick={handleOnClick}/>
-            <button onClick={() => console.log('hola')}>hola</button>
         </div>
     )
 }

@@ -19,7 +19,7 @@ const Table: React.FC<componentProps> = ({initialCodes}) => {
 
     const navigate = useNavigate()
     const showQr = (codeUrl: string) => {
-        navigate('/showQr', {
+        navigate('/show-qr', {
             state: {
                 codeUrl
             }

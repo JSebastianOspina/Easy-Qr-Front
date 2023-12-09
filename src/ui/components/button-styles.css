@@ -1,5 +1,6 @@
 .button-component {
     background-color: var(--button-color-background-color);
+    box-sizing: border-box;
     padding: 7px 10px;
     font-size: 14px;
     width: 100%;

@@ -5,4 +5,10 @@
     justify-content: center;
     align-items: center;
     gap: 20px;
+    
+    @media (min-width: 769px) {
+        padding-left: 30%;
+        padding-right: 30%;
+    }
 }
+
